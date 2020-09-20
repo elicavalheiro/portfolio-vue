@@ -10,43 +10,43 @@
             <h3>HTML</h3>
             <div class="bar">
               <div class="progress"></div>
-              <div class="percentage">30%</div>
             </div>
+            <div class="percentage">80%</div>
           </div>
           <div class="skills">
             <h3>Javascript</h3>
             <div class="bar">
               <div class="progress"></div>
-              <div class="percentage">30%</div>
             </div>
+            <div class="percentage">80%</div>
           </div>
           <div class="skills">
             <h3>Node.js</h3>
             <div class="bar">
               <div class="progress"></div>
-              <div class="percentage">30%</div>
             </div>
+            <div class="percentage">80%</div>
           </div>
           <div class="skills">
             <h3>CSS</h3>
             <div class="bar">
               <div class="progress"></div>
-              <div class="percentage">30%</div>
             </div>
+            <div class="percentage">80%</div>
           </div>
           <div class="skills">
             <h3>ReactJS</h3>
             <div class="bar">
               <div class="progress"></div>
-              <div class="percentage">30%</div>
             </div>
+            <div class="percentage">80%</div>
           </div>
           <div class="skills">
             <h3>VueJS</h3>
             <div class="bar">
               <div class="progress"></div>
-              <div class="percentage">30%</div>
             </div>
+            <div class="percentage">80%</div>
           </div>
         </div>
         <div class="other-skills">
@@ -170,13 +170,19 @@ export default {
 
 .progress {
   height: 100%;
-  width: 30%;
+  width: 80%;
   border-radius: 3px;
   background-color: #f1f1f1;
+  animation: fillBars 0.8s ease-in-out;
+}
+
+@keyframes fillBars {
+  from {
+    width: 0;
+  }
 }
 
 .percentage {
-  width: 100%;
   margin-top: 20px;
   text-align: right;
 }
