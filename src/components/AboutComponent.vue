@@ -46,7 +46,7 @@ export default {
 
 .title-enter-active,
 .title-leave-active {
-  transition: all 0.3s 0.8s ease-in-out;
+  transition: all 0.3s 0.5s ease-in-out;
 }
 
 .title-enter,
@@ -57,7 +57,7 @@ export default {
 
 .text-enter-active,
 .text-leave-active {
-  transition: all 0.3s 1.1s ease-in-out;
+  transition: all 0.3s 0.8s ease-in-out;
 }
 
 .text-enter,
@@ -71,6 +71,7 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 150px;
 }
 
 .content {
