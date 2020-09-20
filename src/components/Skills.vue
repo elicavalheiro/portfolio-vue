@@ -49,6 +49,26 @@
             </div>
           </div>
         </div>
+        <div class="other-skills">
+          <p>Other skills: Project Management | Customer Centric | Leadership | Analytical Capability | Data Driven | Problem Solving</p>
+        </div>
+        <div class="certificates">
+          <h2>Certificates</h2>
+          <ul>
+            <li>
+              _ Modern Web Development With Javascript |
+              <strong>UDEMY</strong>
+            </li>
+            <li>
+              _ Product Management & Product Leadership |
+              <strong>HOW BOOTCAMPS</strong>
+            </li>
+            <li>
+              _ VueJS |
+              <strong>ORIGAMID</strong>
+            </li>
+          </ul>
+        </div>
       </div>
     </transition>
   </div>
@@ -159,5 +179,29 @@ export default {
   width: 100%;
   margin-top: 20px;
   text-align: right;
+}
+
+.other-skills {
+  margin-right: 30px;
+}
+
+.certificates {
+  margin-top: 150px;
+
+  & h2 {
+    font-size: 48px;
+    text-align: center;
+  }
+
+  & ul {
+    margin-top: 100px;
+    list-style: none;
+
+    & li {
+      font-size: 30px;
+      line-height: 45px;
+      margin-bottom: 20px;
+    }
+  }
 }
 </style>
