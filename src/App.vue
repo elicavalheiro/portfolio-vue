@@ -38,8 +38,22 @@ body {
   font-family: $first-font-style;
 }
 
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(241, 241, 241);
+  border-radius: 15px;
+}
+
 .header {
-  padding: 150px;
+  margin: 50px 150px 150px 150px;
   display: flex;
   justify-content: space-between;
   align-items: center;
