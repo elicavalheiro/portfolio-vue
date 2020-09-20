@@ -4,7 +4,7 @@
       <router-link to="/" exact class="logo">Eli Cavalheiro</router-link>
       <div class="nav">
         <router-link to="/about">about</router-link>
-        <router-link to="work-projects">work & projects</router-link>
+        <router-link to="/work-projects" exact>work & projects</router-link>
         <!-- <router-link to>PT</router-link>
         <router-link to>EN</router-link>-->
       </div>
