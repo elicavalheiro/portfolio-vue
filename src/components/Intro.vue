@@ -77,7 +77,7 @@ export default {
 }
 
 .container {
-  padding: 0 150px;
+  padding: 0 150px 150px 150px;
   display: flex;
   justify-content: center;
   align-items: center;
