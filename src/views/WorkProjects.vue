@@ -5,10 +5,10 @@
         <transition appear name="title">
           <ul class="projects">
             <li>
-              <router-link to="/work-projects/totodo">.totodo</router-link>
+              <router-link to="/totodo">.totodo</router-link>
             </li>
             <li>
-              <router-link to="/work-projects/devcv">DevCV</router-link>
+              <router-link to="/devcv">DevCV</router-link>
             </li>
           </ul>
         </transition>

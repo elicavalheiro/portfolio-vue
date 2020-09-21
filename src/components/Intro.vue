@@ -6,14 +6,13 @@
       </transition>
       <div class="texts">
         <transition appear name="welcome">
-          <h1>Hello, I’m Eli!</h1>
+          <h1>Oi, eu sou a Eli!</h1>
         </transition>
 
         <transition appear name="work-title">
           <p>
-            Front-end developer
-            & Associate Product
-            Manager.
+            Desenvolvedora front-end
+            & Designer de Interface
           </p>
         </transition>
         <transition appear name="bar">
@@ -94,11 +93,11 @@ export default {
   width: 50%;
 
   & h1 {
-    font-size: 5rem;
+    font-size: 4.5rem;
   }
 
   & p {
-    font-size: 3.5rem;
+    font-size: 3rem;
     margin-bottom: 10px;
   }
 
@@ -131,10 +130,10 @@ export default {
 @media (max-width: 1200px) {
   .container {
     flex-direction: column;
-    margin: 0 5% 150px 5% !important;
+    margin: 0 5% 100px 5% !important;
 
     & img {
-      width: 50%;
+      width: 40%;
       margin-right: 0;
       margin-bottom: 30px;
     }
@@ -186,6 +185,12 @@ export default {
 }
 
 @media (max-width: 600px) {
+  .container {
+    & img {
+      width: 60%;
+    }
+  }
+
   .texts {
     & h1 {
       font-size: 3rem;

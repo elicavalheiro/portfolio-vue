@@ -3,8 +3,8 @@
     <header class="header">
       <router-link to="/about" exact class="logo">Eli Cavalheiro</router-link>
       <div class="nav">
-        <router-link to="/about">about</router-link>
-        <router-link to="/work-projects">work & projects</router-link>
+        <router-link to="/about">sobre</router-link>
+        <router-link to="/work-projects">projetos</router-link>
         <!-- <router-link to>PT</router-link>
         <router-link to>EN</router-link>-->
       </div>
@@ -94,11 +94,20 @@ body {
 .nav {
   & a {
     margin: 10px;
+    padding: 2px 5px;
+    color: rgba(241, 241, 241, 0.5);
   }
 
   .router-link-active,
   .router-link-exact-active {
-    text-decoration: underline !important;
+    color: #f1f1f1;
+    font-weight: bold;
+  }
+}
+
+@media (max-width: 1300px) {
+  .header {
+    margin: 30px 10% 100px 10%;
   }
 }
 

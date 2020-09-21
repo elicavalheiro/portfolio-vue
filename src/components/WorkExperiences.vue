@@ -3,56 +3,56 @@
     <transition appear name="content">
       <div class="content">
         <transition appear name="title">
-          <h1>Work Experiences</h1>
+          <h1>Experiências</h1>
         </transition>
         <div class="grid">
           <div class="column left work">
             <p>MadeiraMadeira</p>
-            <h3>Front-end Developer</h3>
-            <p class="detail">2 months</p>
+            <h3>Desenvolvedora front-end</h3>
+            <p class="detail">2 meses</p>
           </div>
           <div class="column">
-            <p class="detail">Aug 2020 - now</p>
+            <p class="detail">Ago 2020 - agora</p>
           </div>
           <div class="column left">
             <p class="detail">Nov 2019 - Mar 2020</p>
           </div>
           <div class="column">
             <p>Leankeep Software</p>
-            <h3>Software Development Coordinator</h3>
-            <p class="detail">4 months</p>
+            <h3>Coordenadora de Desenvolvimento de Software</h3>
+            <p class="detail">4 meses</p>
           </div>
           <div class="column left work">
             <p>Leankeep Software</p>
-            <h3>Software Development Analyst</h3>
-            <p class="detail">3 months</p>
+            <h3>Analista de Desenvolvimento</h3>
+            <p class="detail">3 meses</p>
           </div>
           <div class="column">
-            <p class="detail">Aug 2019</p>
+            <p class="detail">Ago 2019</p>
           </div>
           <div class="column left">
-            <p class="detail">Feb 2019</p>
+            <p class="detail">Fev 2019</p>
           </div>
           <div class="column">
             <p>Leankeep Software</p>
-            <h3>Customer Success Support</h3>
-            <p class="detail">6 months</p>
+            <h3>Suporte para Sucesso do Cliente</h3>
+            <p class="detail">6 meses</p>
           </div>
           <div class="column left work">
             <p>Stefanini</p>
-            <h3>Technical Support Analyst</h3>
-            <p class="detail">4 months</p>
+            <h3>Analista de Suporte Técnico</h3>
+            <p class="detail">4 meses</p>
           </div>
           <div class="column">
-            <p class="detail">Sep 2018 - Jan 2019</p>
+            <p class="detail">Set 2018 - Jan 2019</p>
           </div>
           <div class="column left">
-            <p class="detail">Oct 2018 - Jan 2019</p>
+            <p class="detail">Out 2018 - Jan 2019</p>
           </div>
           <div class="column">
             <p>Lionbridge</p>
             <h3>Personalized Internet Assessor</h3>
-            <p class="detail">3 months</p>
+            <p class="detail">3 meses</p>
           </div>
         </div>
       </div>
@@ -93,23 +93,20 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 150px;
 }
 
 .content {
-  width: 70%;
+  width: 50%;
 
   & h1 {
-    margin: 0 20%;
     font-family: "Alegreya Sans SC", sans-serif;
-    font-size: 100px;
+    font-size: 5rem;
     margin-bottom: 150px;
   }
 
   & p {
-    margin-top: 150px;
-    font-size: 30px;
-    line-height: 45px;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
   }
 
   &::before {
@@ -117,7 +114,7 @@ export default {
     position: absolute;
     left: 0;
     margin-top: 65px;
-    width: 400px;
+    width: 15%;
     height: 2px;
     background: #f1f1f1;
     animation: fill 0.8s ease-in-out;
@@ -142,16 +139,16 @@ export default {
 .column {
   & p {
     margin: 0;
-    font-size: 26px;
+    font-size: 1.6rem;
   }
 
   & h3 {
-    font-size: 30px;
+    font-size: 1.8rem;
   }
 
   & .detail {
     opacity: 0.5;
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 }
 
@@ -187,5 +184,45 @@ export default {
 .row {
   display: grid;
   grid-template-rows: 1fr;
+}
+
+@media (max-width: 1300px) {
+  .content {
+    width: 70%;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    width: 100%;
+
+    & h1 {
+      font-size: 3.5rem;
+      text-align: center;
+    }
+
+    & p {
+      font-size: 1.4rem;
+      line-height: 2.1rem;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .column {
+    & p {
+      font-size: 1.3rem;
+    }
+
+    & h3 {
+      font-size: 1.5rem;
+    }
+
+    & .detail {
+      font-size: 1rem;
+    }
+  }
 }
 </style>

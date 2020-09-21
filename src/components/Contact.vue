@@ -3,11 +3,16 @@
     <transition appear name="content">
       <div class="content">
         <transition appear name="title">
-          <h1>Contact</h1>
+          <h1>Contato</h1>
         </transition>
         <p>
-          If you enjoyed my portfolio and want to chat about an idea or a job,
-          please contact me through one of these channels:
+          Se você gostou do meu portfolio e gostaria de
+          <strong>
+            conversar sobre
+            algum projeto
+          </strong> seu ou
+          <strong>solicitar um orçamento</strong>, você pode me encontrar
+          através desses canais:
         </p>
         <div class="social">
           <ul>
@@ -68,7 +73,7 @@ export default {
 }
 
 .container {
-  padding-top: 150px;
+  padding: 150px 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,16 +83,14 @@ export default {
   width: 50%;
 
   & h1 {
-    margin: 0 20%;
     font-family: "Alegreya Sans SC", sans-serif;
-    font-size: 100px;
-    margin-bottom: 150px;
+    font-size: 6rem;
   }
 
   & p {
     margin-top: 150px;
-    font-size: 30px;
-    line-height: 45px;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
   }
 
   &::before {
@@ -95,7 +98,7 @@ export default {
     position: absolute;
     left: 0;
     margin-top: 65px;
-    width: 400px;
+    width: 15%;
     height: 2px;
     background: #f1f1f1;
     animation: fill 0.8s ease-in-out;
@@ -138,5 +141,44 @@ export default {
   font-size: 16px !important;
   text-align: center;
   margin-bottom: 35px;
+}
+
+@media (max-width: 1300px) {
+  .content {
+    width: 65%;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    width: 80%;
+
+    & h1 {
+      font-size: 4rem;
+    }
+
+    & p {
+      font-size: 1.4rem;
+      line-height: 2.1rem;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .social {
+    & ul {
+      & li a {
+        width: 70px;
+        height: 70px;
+
+        & img {
+          width: 40px !important;
+          height: 40px !important;
+        }
+      }
+    }
+  }
 }
 </style>

@@ -30,14 +30,14 @@
         <transition appear>
           <div class="nav">
             <!-- <router-link :to="('/work-projects/' + previousProject)">Previous Project</router-link> -->
-            <a :href="('/work-projects/' + previousProject)">
+            <router-link :to="('/work-projects/' + previousProject)">
               <img src="../assets/arrow_left.svg" alt="Previous Icon" />
               <p>Previous Project</p>
-            </a>
-            <a :href="('/work-projects/' + nextProject)">
+            </router-link>
+            <router-link :to="('/work-projects/' + nextProject)">
               <p>Next Project</p>
               <img src="../assets/arrow_right.svg" alt="Previous Icon" />
-            </a>
+            </router-link>
           </div>
         </transition>
         <transition appear>
