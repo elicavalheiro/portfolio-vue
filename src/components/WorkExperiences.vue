@@ -3,9 +3,9 @@
     <transition appear name="content">
       <div class="content">
         <transition appear name="title">
-          <h1>Experiências</h1>
+          <h1 v-scroll="handleScroll">Experiências</h1>
         </transition>
-        <div class="grid">
+        <div class="grid" v-scroll="handleScroll">
           <div class="column left work">
             <p>MadeiraMadeira</p>
             <h3>Desenvolvedora front-end</h3>
@@ -63,6 +63,18 @@
 <script>
 export default {
   name: "WorkExperiences",
+  methods: {
+    handleScroll: function (evt, el) {
+      console.log(window.scrollY);
+      if (window.scrollY > 3000) {
+        el.setAttribute(
+          "style",
+          "opacity: 1; transform: translate3d(30px,0,0)"
+        );
+      }
+      return window.scrollY > 3500;
+    },
+  },
 };
 </script>
 
@@ -102,6 +114,9 @@ export default {
     font-family: "Alegreya Sans SC", sans-serif;
     font-size: 5rem;
     margin-bottom: 150px;
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    transition: 0.8s 0.8s all cubic-bezier(0.39, 0.575, 0.565, 1);
   }
 
   & p {
@@ -130,6 +145,9 @@ export default {
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+  transition: 0.8s 1.6s all cubic-bezier(0.39, 0.575, 0.565, 1);
 
   & div {
     padding: 20px 30px;
@@ -197,7 +215,7 @@ export default {
     width: 100%;
 
     & h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       text-align: center;
     }
 

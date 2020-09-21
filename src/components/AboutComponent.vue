@@ -3,15 +3,15 @@
     <transition appear name="content">
       <div class="content">
         <transition appear name="title">
-          <h1>Sobre</h1>
+          <h1 v-scroll="handleScroll">Sobre</h1>
         </transition>
         <transition appear name="text">
-          <p>
+          <p v-scroll="handleScroll">
             <strong>Apaixonada por tecnologia</strong>,
             meu objetivo é
             <strong>criar produtos digitais e participar de projetos</strong> que
             me permitam inovar e
-            <strong>criar ótimas experiências</strong> para pessoas.
+            <strong>criar ótimas experiências</strong> para as pessoas.
             <br />
             <br />Como desenvolvedora,
             <strong>amo desenvolver apps e sites com interfaces</strong>
@@ -22,7 +22,7 @@
             <br />
             <br />E como freelancer eu adoraria
             <strong>
-              te ajudar a tirar a sua ideia
+              ajudar você a tirar a sua ideia
               incrível do papel
             </strong>! :D
           </p>
@@ -35,6 +35,18 @@
 <script>
 export default {
   name: "AboutComponent",
+  methods: {
+    handleScroll: function (evt, el) {
+      console.log(window.scrollY);
+      if (window.scrollY > 50) {
+        el.setAttribute(
+          "style",
+          "opacity: 1; transform: translate3d(30px,0,0)"
+        );
+      }
+      return window.scrollY > 110;
+    },
+  },
 };
 </script>
 
@@ -76,6 +88,8 @@ export default {
   display: flex;
   justify-content: center;
   align-items: center;
+  /* opacity: 0;
+  transition: 1.5s 0.8s all cubic-bezier(0.39, 0.575, 0.565, 1); */
 }
 
 .content {
@@ -84,12 +98,17 @@ export default {
   & h1 {
     font-family: "Alegreya Sans SC", sans-serif;
     font-size: 6rem;
+    opacity: 0;
+    transition: 0.8s 0.8s all cubic-bezier(0.39, 0.575, 0.565, 1);
   }
 
   & p {
     margin-top: 150px;
     font-size: 1.8rem;
     line-height: 2.7rem;
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    transition: 0.8s 1.6s all cubic-bezier(0.39, 0.575, 0.565, 1);
   }
 
   &::before {
@@ -121,7 +140,7 @@ export default {
     width: 80%;
 
     & h1 {
-      font-size: 4rem;
+      font-size: 3rem;
     }
 
     & p {

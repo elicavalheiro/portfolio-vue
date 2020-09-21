@@ -3,25 +3,11 @@
     <transition appear name="content">
       <div class="content">
         <transition appear name="title">
-          <h1>Habilidades</h1>
+          <h1 v-scroll="handleScroll">Habilidades</h1>
         </transition>
-        <div class="grid">
+        <div class="grid" v-scroll="handleScroll">
           <div class="skills">
             <h3>HTML</h3>
-            <div class="bar">
-              <div class="progress"></div>
-            </div>
-            <div class="percentage">80%</div>
-          </div>
-          <div class="skills">
-            <h3>Javascript</h3>
-            <div class="bar">
-              <div class="progress"></div>
-            </div>
-            <div class="percentage">80%</div>
-          </div>
-          <div class="skills">
-            <h3>Node.js</h3>
             <div class="bar">
               <div class="progress"></div>
             </div>
@@ -35,24 +21,38 @@
             <div class="percentage">80%</div>
           </div>
           <div class="skills">
-            <h3>ReactJS</h3>
+            <h3>Javascript</h3>
             <div class="bar">
-              <div class="progress"></div>
+              <div class="progress" style="width: 70%"></div>
             </div>
-            <div class="percentage">80%</div>
+            <div class="percentage">70%</div>
           </div>
           <div class="skills">
             <h3>VueJS</h3>
             <div class="bar">
-              <div class="progress"></div>
+              <div class="progress" style="width: 70%"></div>
             </div>
-            <div class="percentage">80%</div>
+            <div class="percentage">70%</div>
+          </div>
+          <div class="skills">
+            <h3>ReactJS</h3>
+            <div class="bar">
+              <div class="progress" style="width: 60%"></div>
+            </div>
+            <div class="percentage">60%</div>
+          </div>
+          <div class="skills">
+            <h3>Node.js</h3>
+            <div class="bar">
+              <div class="progress" style="width: 60%"></div>
+            </div>
+            <div class="percentage">60%</div>
           </div>
         </div>
-        <div class="other-skills">
+        <div class="other-skills" v-scroll="handleScroll">
           <p>Outras skills: Design de Interfaces | Experiência do Usuário | Gerenciamento de Projeto | Customer Centric | Liderança | Capacidade Analítica | Data Driven | Solução de Problemas</p>
         </div>
-        <div class="certificates">
+        <div class="certificates" v-scroll="handleScroll">
           <h2>Certificados</h2>
           <ul>
             <li>
@@ -77,6 +77,18 @@
 <script>
 export default {
   name: "Skills",
+  methods: {
+    handleScroll: function (evt, el) {
+      console.log(window.scrollY);
+      if (window.scrollY > 1100) {
+        el.setAttribute(
+          "style",
+          "opacity: 1; transform: translate3d(-30px,0,0)"
+        );
+      }
+      return window.scrollY > 1200;
+    },
+  },
 };
 </script>
 
@@ -115,8 +127,11 @@ export default {
   & h1 {
     margin: 0 20%;
     font-family: "Alegreya Sans SC", sans-serif;
-    font-size: 6rem;
+    font-size: 5rem;
     text-align: right;
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    transition: 0.8s 0.8s all cubic-bezier(0.39, 0.575, 0.565, 1);
   }
 
   & p {
@@ -147,6 +162,9 @@ export default {
   margin-top: 150px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+  transition: 0.8s 1.6s all cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 .skills {
@@ -188,10 +206,16 @@ export default {
 
 .other-skills {
   margin-right: 30px;
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+  transition: 0.8s 2.4s all cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 .certificates {
   margin-top: 150px;
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+  transition: 0.8s 3.2s all cubic-bezier(0.39, 0.575, 0.565, 1);
 
   & h2 {
     font-size: 2.8rem;
@@ -226,7 +250,7 @@ export default {
 
     & h1 {
       margin: 0 5%;
-      font-size: 4rem;
+      font-size: 3rem;
     }
 
     & p {

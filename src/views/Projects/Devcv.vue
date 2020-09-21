@@ -7,12 +7,13 @@
         </transition>
         <transition appear>
           <p>
-            Projeto simples que consome a API do Github,
-            onde você pode buscar o @ de um usuário e obter
-            informações sobre os projetos criados no Github.
             Para recrutadores que precisam contratar desenvolvedores,
             é interessante ter uma visualização mais simples sobre
-            o/a dev e os projetos feitos*. :D
+            o/a dev e os projetos feitos. :D
+            <br />
+            <br />Por isso desenvolvi projeto simples que consome a API do Github,
+            onde você pode buscar o @ de um usuário e obter
+            informações sobre os projetos criados no Github*.
             <br />
             <br />
           </p>
@@ -24,7 +25,7 @@
           </div>
         </transition>
         <transition appear>
-          <a href="#" target="_blank" class="see-live">ver projeto</a>
+          <a href="#" class="see-live">ver projeto</a>
         </transition>
         <transition appear>
           <div class="nav">
@@ -49,6 +50,9 @@
 <script>
 export default {
   name: "Devcv",
+  created() {
+    window.scroll(0, 0);
+  },
 };
 </script>
 
@@ -91,13 +95,16 @@ export default {
   }
 
   & p {
+    width: 70%;
     margin-top: 30px;
-    font-size: 26px;
-    line-height: 39px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
   }
 
   & .project-img {
-    margin-top: 150px;
+    margin-top: 50px;
     width: 100%;
     margin-bottom: 100px;
   }
@@ -109,9 +116,10 @@ export default {
 
   .obs {
     opacity: 0.5;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
     font-size: 0.9rem;
+    text-align: center;
   }
 }
 
@@ -122,7 +130,7 @@ export default {
 }
 
 .see-live {
-  font-size: 36px;
+  font-size: 1.6rem;
   text-decoration: underline !important;
 }
 
@@ -143,6 +151,7 @@ export default {
     }
 
     & p {
+      width: 100%;
       margin: 0 10px;
       font-size: 20px !important;
     }
@@ -153,5 +162,43 @@ export default {
   font-size: 16px !important;
   text-align: center;
   margin-bottom: 35px;
+}
+
+@media (max-width: 1300px) {
+  .content {
+    margin: 0 50px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    margin: 0 10px;
+    width: 90%;
+
+    & h1 {
+      font-size: 3rem;
+    }
+
+    & p {
+      width: 90%;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .nav {
+    & a {
+      & p {
+        width: 100%;
+        margin: 0 10px;
+        font-size: 0.9rem !important;
+      }
+    }
+  }
 }
 </style>

@@ -7,13 +7,14 @@
         </transition>
         <transition appear>
           <p>
-            Eu queria criar um app de To Do, mas sabemos que tode dev
+            Minha ideia era criar um app de To Do,
+            mas sabemos que tode dev
             já criou um app de to do em algum momento da vida rs.
             <br />
-            <br />Então eu decidi criar um projeto completo, desde pensar
-            em conceitos, fazer várias pesquisas, validações sobre
-            a experiência do usuário, criação de personas e outras etapas
-            criativas. E foi assim que nasceu o .totodo :D
+            <br />Então eu decidi criar um projeto completo! Desenvolvi desde
+            conceito, pesquisas e validações de experiência do usuário,
+            criação de personas, identidade visual e outras etapas criativas.
+            E foi assim que nasceu o .totodo :D
           </p>
         </transition>
         <transition appear>
@@ -22,7 +23,7 @@
           </div>
         </transition>
         <transition appear>
-          <a href="#" target="_blank" class="see-live">ver projeto</a>
+          <a href="#" class="see-live">ver projeto</a>
         </transition>
         <transition appear>
           <div class="nav">
@@ -47,6 +48,9 @@
 <script>
 export default {
   name: "Totodo",
+  created() {
+    window.scroll(0, 0);
+  },
 };
 </script>
 
@@ -85,17 +89,20 @@ export default {
   & h1 {
     margin: 0 20%;
     font-family: "Alegreya Sans SC", sans-serif;
-    font-size: 100px;
+    font-size: 5rem;
   }
 
   & p {
+    width: 70%;
     margin-top: 30px;
-    font-size: 26px;
-    line-height: 39px;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 1.5rem;
+    line-height: 2.2rem;
   }
 
   & .project-img {
-    margin-top: 150px;
+    margin-top: 50px;
     width: 100%;
     margin-bottom: 100px;
   }
@@ -113,7 +120,7 @@ export default {
 }
 
 .see-live {
-  font-size: 36px;
+  font-size: 1.6rem;
   text-decoration: underline !important;
 }
 
@@ -134,8 +141,9 @@ export default {
     }
 
     & p {
+      width: 100%;
       margin: 0 10px;
-      font-size: 20px !important;
+      font-size: 1.3rem !important;
     }
   }
 }
@@ -144,5 +152,43 @@ export default {
   font-size: 16px !important;
   text-align: center;
   margin-bottom: 35px;
+}
+
+@media (max-width: 1300px) {
+  .content {
+    margin: 0 50px;
+    width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .content {
+    margin: 0 10px;
+    width: 90%;
+
+    & h1 {
+      font-size: 3rem;
+    }
+
+    & p {
+      width: 90%;
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .nav {
+    & a {
+      & p {
+        width: 100%;
+        margin: 0 10px;
+        font-size: 0.9rem !important;
+      }
+    }
+  }
 }
 </style>

@@ -3,9 +3,9 @@
     <transition appear name="content">
       <div class="content">
         <transition appear name="title">
-          <h1>Contato</h1>
+          <h1 v-scroll="handleScroll">Contato</h1>
         </transition>
-        <p>
+        <p v-scroll="handleScroll">
           Se você gostou do meu portfolio e gostaria de
           <strong>
             conversar sobre
@@ -14,25 +14,25 @@
           <strong>solicitar um orçamento</strong>, você pode me encontrar
           através desses canais:
         </p>
-        <div class="social">
+        <div class="social" v-scroll="handleScroll">
           <ul>
             <li>
-              <a href="#github">
+              <a href="https://github.com/elicavalheiro" target="_blank">
                 <img src="../assets/github.svg" alt="Github Icon" />
               </a>
             </li>
             <li>
-              <a href="#behance">
+              <a href="https://www.behance.net/elicavalheiro" target="_blank">
                 <img src="../assets/behance.svg" alt="behance Icon" />
               </a>
             </li>
             <li>
-              <a href="#linkedin">
+              <a href="https://www.linkedin.com/in/elicavalheiro/" target="_blank">
                 <img src="../assets/linkedin.svg" alt="linkedin Icon" />
               </a>
             </li>
             <li>
-              <a href="#email">
+              <a href="mailto: elimara.ac@gmail.com">
                 <img src="../assets/email.svg" alt="email Icon" />
               </a>
             </li>
@@ -47,6 +47,18 @@
 <script>
 export default {
   name: "Contact",
+  methods: {
+    handleScroll: function (evt, el) {
+      console.log(window.scrollY);
+      if (window.scrollY > 4700) {
+        el.setAttribute(
+          "style",
+          "opacity: 1; transform: translate3d(30px,0,0)"
+        );
+      }
+      return window.scrollY > 5000;
+    },
+  },
 };
 </script>
 
@@ -73,7 +85,7 @@ export default {
 }
 
 .container {
-  padding: 150px 0;
+  margin-top: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -85,12 +97,18 @@ export default {
   & h1 {
     font-family: "Alegreya Sans SC", sans-serif;
     font-size: 6rem;
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    transition: 0.8s 0.8s all cubic-bezier(0.39, 0.575, 0.565, 1);
   }
 
   & p {
     margin-top: 150px;
     font-size: 1.8rem;
     line-height: 2.7rem;
+    opacity: 0;
+    transform: translate3d(0, 0, 0);
+    transition: 0.8s 1.6s all cubic-bezier(0.39, 0.575, 0.565, 1);
   }
 
   &::before {
@@ -113,6 +131,9 @@ export default {
 
 .social {
   margin-top: 150px;
+  opacity: 0;
+  transform: translate3d(0, 0, 0);
+  transition: 0.8s 2.4s all cubic-bezier(0.39, 0.575, 0.565, 1);
 
   & ul {
     list-style: none;
@@ -154,7 +175,7 @@ export default {
     width: 80%;
 
     & h1 {
-      font-size: 4rem;
+      font-size: 3rem;
     }
 
     & p {
