@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <header class="header">
-      <router-link to="/" exact class="logo">Eli Cavalheiro</router-link>
+      <router-link to="/about" exact class="logo">Eli Cavalheiro</router-link>
       <div class="nav">
         <router-link to="/about">about</router-link>
-        <router-link to="/work-projects" exact>work & projects</router-link>
+        <router-link to="/work-projects">work & projects</router-link>
         <!-- <router-link to>PT</router-link>
         <router-link to>EN</router-link>-->
       </div>
@@ -53,7 +53,7 @@ body {
 }
 
 .header {
-  margin: 50px 150px 150px 150px;
+  margin: 50px 11% 150px 11%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -61,14 +61,14 @@ body {
 
 .logo {
   font-family: $second-font-style;
-  font-size: 26px !important;
+  font-size: 1.5rem !important;
 }
 
 .header::after {
   content: "";
   position: absolute;
-  height: 1px;
-  width: 140px;
+  height: 2px;
+  width: 10%;
   right: 0;
   background: $text-color;
   animation: grow 0.8s ease-in-out;
@@ -78,7 +78,7 @@ body {
   & a {
     text-decoration: none;
     color: $text-color;
-    font-size: 20px;
+    font-size: 1.1rem;
   }
 }
 
@@ -87,7 +87,7 @@ body {
     width: 0;
   }
   to {
-    width: 140px;
+    width: 10%;
   }
 }
 
@@ -99,6 +99,24 @@ body {
   .router-link-active,
   .router-link-exact-active {
     text-decoration: underline !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    margin: 30px;
+
+    &::after {
+      display: none;
+    }
+
+    & a {
+      font-size: 0.9rem;
+    }
+  }
+
+  .logo {
+    font-size: 1.1rem !important;
   }
 }
 </style>

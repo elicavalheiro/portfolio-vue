@@ -12,8 +12,8 @@
         <transition appear name="work-title">
           <p>
             Front-end developer
-            <br />& Associate Product
-            <br />Manager.
+            & Associate Product
+            Manager.
           </p>
         </transition>
         <transition appear name="bar">
@@ -77,32 +77,35 @@ export default {
 }
 
 .container {
-  padding: 0 150px 150px 150px;
+  margin: 0 10% 150px 10%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
 
-img {
-  margin-right: 200px;
+  & img {
+    margin-right: 10%;
+    width: 30%;
+    height: 30%;
+  }
 }
 
 .texts {
   font-family: "Alegreya Sans SC", sans-serif;
+  width: 50%;
 
   & h1 {
-    font-size: 6.8rem;
+    font-size: 5rem;
   }
 
   & p {
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     margin-bottom: 10px;
   }
 
   & span {
     content: "";
     position: absolute;
-    width: 620px;
+    width: 40%;
     height: 2px;
     transform: rotate(-2.79deg);
     background: #f1f1f1;
@@ -122,6 +125,75 @@ img {
 @keyframes fill {
   from {
     width: 0;
+  }
+}
+
+@media (max-width: 1200px) {
+  .container {
+    flex-direction: column;
+    margin: 0 5% 150px 5% !important;
+
+    & img {
+      width: 50%;
+      margin-right: 0;
+      margin-bottom: 30px;
+    }
+  }
+
+  .texts {
+    width: 100%;
+
+    & h1 {
+      width: 70%;
+      margin: 0 auto;
+    }
+
+    & p {
+      width: 70%;
+      margin: 0 auto;
+    }
+
+    & span {
+      left: 30%;
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .container {
+    padding: 0;
+  }
+
+  .texts {
+    & h1 {
+      font-size: 4rem;
+    }
+
+    & p {
+      font-size: 2.5rem;
+    }
+
+    & h1,
+    & p {
+      width: 90%;
+    }
+
+    & span {
+      left: 10%;
+      width: 70%;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .texts {
+    & h1 {
+      font-size: 3rem;
+    }
+
+    & p {
+      font-size: 2rem;
+    }
   }
 }
 </style>
